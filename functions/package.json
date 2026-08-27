@@ -1,0 +1,12 @@
+{
+  "name": "bvs-web-functions",
+  "description": "Server-rendered share pages for bigvibestudios.com",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-functions": "^4.9.0"
+  },
+  "private": true
+}

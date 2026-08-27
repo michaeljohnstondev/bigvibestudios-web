@@ -3,356 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Vibe Studios | Building Community Through Technology</title>
-    <meta name="description" content="Big Vibe Studios - Creating innovative apps that bring communities together. Discover The Yo and our other projects.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #000814 0%, #001d3d 100%);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            width: 100%;
-        }
-
-        header {
-            padding: 40px 0 10px;
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 3.5em;
-            font-weight: 900;
-            background: linear-gradient(135deg, #00D4FF 0%, #00ff88 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.3em;
-            color: #a0a0a0;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 20px 20px 30px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 8px;
-            line-height: 1.2;
-            font-weight: 600;
-        }
-
-        .highlight {
-            color: #00ff88;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-        }
-
-        .description {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #a0a0a0;
-            margin-bottom: 20px;
-            white-space: nowrap;
-            font-weight: 400;
-        }
-
-        .apps-section {
-            margin: 60px 0;
-        }
-
-        .section-title {
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #00D4FF;
-            font-weight: 900;
-        }
-
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .app-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(0, 212, 255, 0.3);
-            border-radius: 16px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .app-card:hover {
-            border-color: #00D4FF;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
-            transform: translateY(-10px);
-        }
-
-        .app-icon {
-            font-size: 3em;
-        }
-
-        .app-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .app-card h3 {
-            font-size: 2.8em;
-            color: #00ff88;
-            margin: 0;
-            font-weight: 900;
-            flex: 1;
-            text-align: center;
-        }
-
-        /* Center "The Yo" title only on larger screens */
-        @media (min-width: 769px) {
-            .app-card h3 {
-                margin-left: -40px;
-            }
-        }
-
-        .app-status {
-            display: inline-block;
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid #00ff88;
-            color: #00ff88;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .app-description {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #a0a0a0;
-            margin-bottom: 25px;
-        }
-
-        .app-features {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .app-features li {
-            padding: 8px 0;
-            color: #a0a0a0;
-            font-size: 1em;
-        }
-
-        .app-features li:before {
-            content: "✓ ";
-            color: #00ff88;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #00D4FF 0%, #00ff88 100%);
-            color: #000814;
-            padding: 15px 35px;
-            border-radius: 8px;
-            font-size: 1.1em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
-        }
-
-        .coming-soon-card {
-            opacity: 0.6;
-            position: relative;
-        }
-
-        .coming-soon-badge {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid #00D4FF;
-            color: #00D4FF;
-        }
-
-        .about-section {
-            max-width: 800px;
-            margin: 80px auto;
-            text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-        }
-
-        .about-section h2 {
-            font-size: 2.5em;
-            color: #00D4FF;
-            margin-bottom: 25px;
-            font-weight: 900;
-        }
-
-        .about-section p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #a0a0a0;
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 80px;
-            border-top: 1px solid rgba(0, 212, 255, 0.3);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: #00D4FF;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #00ff88;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-        }
-
-        .copyright {
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 2.2em;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .description {
-                font-size: 1.1em;
-            }
-
-            .apps-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-        }
-    </style>
+    <title>Big Vibe Studios | Apps, tools, and everything I've built</title>
+    <meta name="description" content="Big Vibe Studios — a one-person studio building React Native apps, Firebase backends and Python tools. Download the apps and scripts, on the stores and off.">
+    <meta property="og:title" content="Big Vibe Studios">
+    <meta property="og:description" content="Apps, tools, and everything I've built. Two on the app stores, the rest available right here.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bigvibestudios.com/">
+    <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo" style="text-decoration: none; display: block; cursor: pointer;" onclick="event.preventDefault(); window.location.reload();">BIG VIBE STUDIOS</a>
-        </header>
+    <header class="site">
+        <div class="container">
+            <a href="/" class="logo">BIG VIBE STUDIOS</a>
+            <nav class="site">
+                <a href="/" aria-current="page">Home</a>
+                <a href="/builds">Builds</a>
+                <a href="/resume">Résumé</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-        <main>
-            <div class="hero">
-                <h1>Find Your Local <span class="highlight">Yo</span> — Join Your Community <span class="highlight">Today</span></h1>
-            </div>
+    <main>
+        <div class="container">
 
-            <section class="apps-section">
-                <div class="apps-grid">
-                    <!-- The Yo -->
-                    <a href="/theyo" class="app-card">
-                        <div class="app-header">
-                            <div class="app-icon">📱</div>
-                            <h3>The Yo</h3>
-                        </div>
-                        <span class="app-status">Now Available</span>
-                        <p class="app-description">
-                            Connect with your studio. Organize events. Build community.
-                        </p>
-                        <ul class="app-features">
-                            <li>Create and manage events</li>
-                            <li>Smart RSVP tracking</li>
-                            <li>Real-time notifications</li>
-                            <li>Community discovery</li>
-                        </ul>
-                        <span class="cta-button">Download →</span>
-                    </a>
+            <section class="hero">
+                <h1>I build apps.<br><span class="highlight">Two are on the stores.</span> The rest are right here.</h1>
+                <p class="lead">
+                    Big Vibe Studios is one person. I write the app, the Firebase backend,
+                    the cloud functions, the web dashboard and the store listing — then I
+                    ship it and keep it running.
+                </p>
+                <p class="lead">
+                    Everything below is real, working software. If it made it through
+                    App Store review you can grab it from the store. If it didn't need to,
+                    you can download it straight from this page.
+                </p>
 
-                    <!-- Call to Action -->
-                    <a href="/join" class="app-card" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%); border-color: #00ff88; text-decoration: none; color: inherit;">
-                        <div class="app-icon">🚀</div>
-                        <h3 style="color: #00D4FF;">Join the Movement</h3>
-                        <p class="app-description" style="font-size: 1.15em; margin-bottom: 25px;">
-                            Whether you're hosting events, looking to connect with your local community,
-                            or just want to be part of something bigger — this is your studio.
-                        </p>
-                        <p class="app-description" style="color: #00ff88; font-weight: 600; margin-bottom: 30px;">
-                            Stay connected. Get updates. Be part of the community.
-                        </p>
-                        <span class="cta-button">Join Now →</span>
-                    </a>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="num">6</span>
+                        <span class="label">Projects shipped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="num">2</span>
+                        <span class="label">On app stores</span>
+                    </div>
+                    <div class="stat">
+                        <span class="num">150k+</span>
+                        <span class="label">Lines of code</span>
+                    </div>
+                    <div class="stat">
+                        <span class="num">540+</span>
+                        <span class="label">Commits</span>
+                    </div>
                 </div>
             </section>
-        </main>
 
-        <footer>
-            <div class="footer-links">
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="mailto:support@bigvibestudios.com">Contact Us</a>
-            </div>
-            <p class="copyright">&copy; 2025 Big Vibe Studios. All rights reserved.</p>
-        </footer>
-    </div>
+            <section>
+                <h2 class="section-title">The builds</h2>
+                <p class="section-lead">
+                    Apps on the stores, apps in beta, and the tools I never put on a
+                    store because they didn't belong there.
+                </p>
+
+                <div class="grid">
+
+                    <a href="/theyo" class="card">
+                        <div class="card-head">
+                            <span class="card-icon">📱</span>
+                            <h3>The Yo</h3>
+                        </div>
+                        <span class="pill pill-live">Live · iOS &amp; Android</span>
+                        <p>
+                            Community events. Create one, invite your people, track who's
+                            actually coming.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">19 Cloud Functions</span>
+                        </div>
+                        <div class="spacer"></div>
+                        <span class="btn">Download →</span>
+                    </a>
+
+                    <a href="/snappled" class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🎬</span>
+                            <h3>Snappled</h3>
+                        </div>
+                        <span class="pill pill-beta">Closed beta</span>
+                        <p>
+                            The party game where you star in it. Get a prompt, record ten
+                            seconds, the crowd votes.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Video capture</span>
+                            <span class="tag">Realtime rounds</span>
+                        </div>
+                        <div class="spacer"></div>
+                        <span class="btn">Join the beta →</span>
+                    </a>
+
+                    <a href="/tracker" class="card">
+                        <div class="card-head">
+                            <span class="card-icon">⏱️</span>
+                            <h3>Tracker</h3>
+                        </div>
+                        <span class="pill pill-direct">Direct download</span>
+                        <p>
+                            Timers, lists, tasks and tallies in one shape. Not on any
+                            store — install the APK yourself.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Offline-first</span>
+                            <span class="tag">Shared lists</span>
+                        </div>
+                        <div class="spacer"></div>
+                        <span class="btn">Get the APK →</span>
+                    </a>
+
+                    <a href="/stock-alerts" class="card">
+                        <div class="card-head">
+                            <span class="card-icon">📈</span>
+                            <h3>stock-alerts</h3>
+                        </div>
+                        <span class="pill pill-direct">Open source</span>
+                        <p>
+                            Python toolkit that reads chart structure off raw OHLCV and
+                            builds entry ladders across ~700 tickers.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">pandas</span>
+                            <span class="tag">15k lines</span>
+                        </div>
+                        <div class="spacer"></div>
+                        <span class="btn">Download &amp; run →</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">How it's built</h2>
+                <p class="section-lead">
+                    One stack, used properly, across every project.
+                </p>
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">📲</span>
+                            <h3>Mobile</h3>
+                        </div>
+                        <p>
+                            React Native on Expo SDK 55. EAS Build for the binaries,
+                            EAS Update to push JS-only fixes over the air without waiting
+                            on review.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">React Native 0.83</span>
+                            <span class="tag">Expo 55</span>
+                            <span class="tag">Reanimated 4</span>
+                            <span class="tag">EAS</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🔥</span>
+                            <h3>Backend</h3>
+                        </div>
+                        <p>
+                            Firebase end to end — Auth, Firestore with real security rules
+                            and composite indexes, Cloud Functions for every notification
+                            path, Storage, and FCM.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Firestore</span>
+                            <span class="tag">Cloud Functions</span>
+                            <span class="tag">FCM</span>
+                            <span class="tag">Security rules</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🌐</span>
+                            <h3>Web</h3>
+                        </div>
+                        <p>
+                            Next.js 15 App Router in TypeScript for the companion
+                            dashboard, sharing the mobile app's Firestore directly —
+                            no separate API tier to keep in sync.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Next.js 15</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Tailwind v4</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🚢</span>
+                            <h3>Shipping</h3>
+                        </div>
+                        <p>
+                            App Store review, Play Data Safety, universal links and App
+                            Links, privacy / child-safety / account-deletion pages. The
+                            unglamorous half of shipping, done.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">App Store</span>
+                            <span class="tag">Play Console</span>
+                            <span class="tag">TestFlight</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="panel">
+                    <h2 class="section-title">Want the whole list?</h2>
+                    <p class="section-lead">
+                        Every project, its status, and exactly how to get it — including
+                        the archive work going back to 2018.
+                    </p>
+                    <div class="btn-row">
+                        <a href="/builds" class="btn">Browse all builds →</a>
+                        <a href="/resume" class="btn btn-ghost">Read the résumé</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site">
+        <div class="footer-links">
+            <a href="/builds">Builds</a>
+            <a href="/resume">Résumé</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Big Vibe Studios. All rights reserved.</p>
+    </footer>
 </body>
 </html>

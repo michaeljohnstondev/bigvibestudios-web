@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker | Big Vibe Studios</title>
+    <meta name="description" content="Tracker — timers, lists, tasks and tallies in one shape. Free Android download, straight from Big Vibe Studios.">
+    <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+    <header class="site">
+        <div class="container">
+            <a href="/" class="logo">BIG VIBE STUDIOS</a>
+            <nav class="site">
+                <a href="/">Home</a>
+                <a href="/builds">Builds</a>
+                <a href="/resume">Résumé</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section class="hero">
+                <span class="pill pill-direct">Direct download · Not on any store</span>
+                <h1>Tracker</h1>
+                <p class="lead">
+                    A timer. A checklist. A tally. A folder. Tracker doesn't make you
+                    choose, because underneath it's all the same thing.
+                </p>
+                <p class="lead">
+                    It started as a fasting timer and turned into something better:
+                    <strong>everything is a node.</strong> A node with children behaves
+                    like a folder. One with a goal behaves like a timer. One you tick
+                    behaves like a task. One with a count is a tally. A single node can be
+                    all four at once — which is how a "Do Daily" folder ends up holding a
+                    repeating task that also times itself.
+                </p>
+
+                <div class="btn-row" style="margin-top: 26px;">
+                    <a class="btn" id="apkBtn" href="/downloads/tracker-latest.apk"
+                       download>Download for Android</a>
+                    <a class="btn btn-ghost" href="#ios">On iPhone?</a>
+                </div>
+                <span class="btn-note" id="apkNote">
+                    Free · Android 8.0+ · You'll need to allow install from your browser
+                </span>
+            </section>
+
+            <section>
+                <h2 class="section-title">What it does</h2>
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">⏱️</span>
+                            <h3>Timers that survive</h3>
+                        </div>
+                        <p>
+                            Start a timer and it counts up. Forgot to tap? Set the time it
+                            actually started. Pick a goal and a bar tracks it, then keeps
+                            counting once you pass it.
+                        </p>
+                        <p>
+                            Only the absolute start timestamp is stored, so elapsed time is
+                            recalculated rather than counted. Kill the app, reboot the
+                            phone, leave it a week — the timer is still right.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🌳</span>
+                            <h3>Nest anything</h3>
+                        </div>
+                        <p>
+                            Lists inside lists, as deep as you like. Reorder by dragging.
+                            Colour-code the ones you look at most. Clear the finished items
+                            without touching the rest.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">📅</span>
+                            <h3>Due dates that move</h3>
+                        </div>
+                        <p>
+                            Give an item a due date and it can surface itself inside a
+                            <em>different</em> list when the time comes — so "renew the
+                            registration" lands in Today, on the day, without you filing it
+                            twice.
+                        </p>
+                        <p>Repeat daily, weekly, or every time you clear it.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">👥</span>
+                            <h3>Share a list</h3>
+                        </div>
+                        <p>
+                            Invite someone by email and the list syncs between you both.
+                            Everyone sees who ticked what.
+                        </p>
+                        <p>
+                            Optional. Skip the sign-in and the whole app runs offline on
+                            your device, with no account and no network.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🔔</span>
+                            <h3>Reminders</h3>
+                        </div>
+                        <p>
+                            Set as many alarms on an item as you need. They arrive as push
+                            notifications whether or not the app is open.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🔒</span>
+                            <h3>Yours</h3>
+                        </div>
+                        <p>
+                            No ads, no analytics, no accounts unless you want one. Data you
+                            don't share never leaves the phone.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Installing it</h2>
+                <p class="section-lead">
+                    Tracker isn't on Google Play, so Android will ask once whether it
+                    trusts the download. That's normal for an app installed outside a store.
+                </p>
+
+                <div class="panel">
+                    <h3>Android</h3>
+                    <ul class="checks">
+                        <li>Tap <strong>Download for Android</strong> above</li>
+                        <li>Open the downloaded <code>.apk</code> from your notification shade</li>
+                        <li>Android asks to allow installs from your browser — allow it once</li>
+                        <li>Tap Install, then open Tracker</li>
+                    </ul>
+                    <p class="btn-note">
+                        Updates: Tracker updates itself over the air. You only need to
+                        download a new APK when a release note here says so.
+                    </p>
+                </div>
+            </section>
+
+            <section id="ios">
+                <h2 class="section-title">On iPhone</h2>
+                <p class="section-lead">
+                    iOS doesn't allow installing outside the App Store, so there's no
+                    download link I can give you. What I can do is add you to the
+                    TestFlight build — drop your email and I'll send the invite.
+                </p>
+
+                <div class="panel">
+                    <form class="request" id="iosForm" action="https://formspree.io/f/xvznvlzz" method="POST">
+                        <input type="hidden" name="_subject" value="Tracker — iOS TestFlight request">
+                        <input type="hidden" name="app" value="Tracker (iOS)">
+                        <div>
+                            <label for="iosEmail">Your Apple ID email</label>
+                            <input type="email" id="iosEmail" name="email" required
+                                   placeholder="you@example.com">
+                        </div>
+                        <button type="submit" class="btn" id="iosSubmit">Request an invite</button>
+                        <div class="form-msg ok" id="iosOk">
+                            Got it. I'll send the TestFlight invite to that address.
+                        </div>
+                        <div class="form-msg err" id="iosErr">
+                            That didn't send — try the <a class="inline" href="/contact">contact form</a> instead.
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Under the hood</h2>
+                <div class="panel">
+                    <ul class="checks">
+                        <li>React Native on Expo SDK 55, built and signed with EAS</li>
+                        <li>Local-first — every node lives in on-device storage first, versioned so upgrades never lose data</li>
+                        <li>Firestore sync layer for shared trees, with membership records and recovery queries that can rebuild a list whose local copy is gone</li>
+                        <li>Firebase Cloud Messaging for reminders</li>
+                        <li>Over-the-air updates, so fixes ship without a new download</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/builds">Builds</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Big Vibe Studios. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // The APK is uploaded by hand each release. If it isn't there yet, don't
+        // hand out a link that 404s — point people at the invite form instead.
+        (function checkApk() {
+            const btn = document.getElementById('apkBtn');
+            const note = document.getElementById('apkNote');
+            fetch(btn.getAttribute('href'), { method: 'HEAD' })
+                .then(function (res) {
+                    if (res.ok) return;
+                    throw new Error('missing');
+                })
+                .catch(function () {
+                    btn.setAttribute('href', '#ios');
+                    btn.removeAttribute('download');
+                    btn.textContent = 'Request the Android build';
+                    note.textContent = 'The public APK is between releases — ask and I\'ll send it.';
+                });
+        })();
+
+        // Submit in place so the visitor stays on the page and sees the result.
+        (function wireForm() {
+            const form = document.getElementById('iosForm');
+            const submit = document.getElementById('iosSubmit');
+            const ok = document.getElementById('iosOk');
+            const err = document.getElementById('iosErr');
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                ok.style.display = 'none';
+                err.style.display = 'none';
+                submit.disabled = true;
+                submit.textContent = 'Sending...';
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { Accept: 'application/json' },
+                    });
+                    if (!res.ok) throw new Error('failed');
+                    form.reset();
+                    ok.style.display = 'block';
+                } catch (_) {
+                    err.style.display = 'block';
+                } finally {
+                    submit.disabled = false;
+                    submit.textContent = 'Request an invite';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

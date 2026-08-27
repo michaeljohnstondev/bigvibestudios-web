@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Vibe Studios | All builds</title>
+    <meta name="description" content="Every app, tool and script built at Big Vibe Studios — what it is, what state it's in, and how to get it.">
+    <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+    <header class="site">
+        <div class="container">
+            <a href="/" class="logo">BIG VIBE STUDIOS</a>
+            <nav class="site">
+                <a href="/">Home</a>
+                <a href="/builds" aria-current="page">Builds</a>
+                <a href="/resume">Résumé</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section class="hero">
+                <h1>Everything I've built</h1>
+                <p class="lead">
+                    Four things you can install today, one web app, and the archive
+                    that got me here. Store apps link to the store; everything else
+                    downloads straight from this site.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">At a glance</h2>
+                <div class="panel">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>What it is</th>
+                                    <th>Built with</th>
+                                    <th>How to get it</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>The Yo</strong></td>
+                                    <td>Community event app</td>
+                                    <td>React Native, Firebase</td>
+                                    <td><a class="inline" href="/theyo">App Store &amp; Play</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Snappled</strong></td>
+                                    <td>Video party game</td>
+                                    <td>React Native, Firebase</td>
+                                    <td><a class="inline" href="/snappled">TestFlight / Play beta</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tracker</strong></td>
+                                    <td>Timers, lists, tasks, tallies</td>
+                                    <td>React Native, Firebase</td>
+                                    <td><a class="inline" href="/tracker">Direct APK download</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>stock-alerts</strong></td>
+                                    <td>Market screening toolkit</td>
+                                    <td>Python, pandas</td>
+                                    <td><a class="inline" href="/stock-alerts">Download the source</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Yo Web</strong></td>
+                                    <td>Web companion dashboard</td>
+                                    <td>Next.js 15, TypeScript</td>
+                                    <td><a class="inline" href="https://theyo.org">Open in browser</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Snapples archive</strong></td>
+                                    <td>2018–19 components &amp; cron backend</td>
+                                    <td>React Native, Cloud Functions</td>
+                                    <td>Reference only</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">On the stores</h2>
+                <p class="section-lead">Reviewed, approved, and updated over the air.</p>
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">📱</span>
+                            <h3>The Yo</h3>
+                        </div>
+                        <span class="pill pill-live">Live · iOS &amp; Android</span>
+                        <p>
+                            Create an event, invite your people, see who's coming. A follow
+                            graph, interest matching, per-event message boards, and a
+                            notification for every thing that actually matters.
+                        </p>
+                        <ul class="checks">
+                            <li>Full event lifecycle — templates, co-hosts, guest lists, private events</li>
+                            <li>19 Cloud Functions covering every notification path</li>
+                            <li>QR-code invites with verified universal links</li>
+                            <li>Google &amp; Apple sign-in, contacts and calendar integration</li>
+                        </ul>
+                        <div class="spacer"></div>
+                        <div class="btn-row">
+                            <a class="btn" href="https://apps.apple.com/us/app/the-yo/id6754061620">App Store</a>
+                            <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.bigvibestudios.bvs">Google Play</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🎬</span>
+                            <h3>Snappled</h3>
+                        </div>
+                        <span class="pill pill-beta">Closed beta</span>
+                        <p>
+                            A prompt lands, you record ten seconds, the crowd votes and the
+                            votes decide the round. Saved clips stay in your collection;
+                            everything else disappears when its prompt expires.
+                        </p>
+                        <ul class="checks">
+                            <li>In-app capture, compression and playback</li>
+                            <li>Round engine split into prompt → record → vote → results</li>
+                            <li>Custom lobbies, or solo practice against bots</li>
+                            <li>Coins, tickets and topic tokens</li>
+                        </ul>
+                        <div class="spacer"></div>
+                        <div class="btn-row">
+                            <a class="btn" href="/snappled">Join the beta →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Not on a store</h2>
+                <p class="section-lead">
+                    These didn't need review to be useful. Take them as they are.
+                </p>
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">⏱️</span>
+                            <h3>Tracker</h3>
+                        </div>
+                        <span class="pill pill-direct">Direct download</span>
+                        <p>
+                            One idea: <em>everything is a node.</em> A node with children is
+                            a folder, one with a goal is a timer, one you tick is a task,
+                            one with a count is a tally — and a single node can be all
+                            of those at once.
+                        </p>
+                        <ul class="checks">
+                            <li>Works fully offline; sign in only if you want shared lists</li>
+                            <li>Timers store an absolute start time, so reboots don't lose them</li>
+                            <li>Share a list by email; due dates can surface an item in another list</li>
+                            <li>Push reminders</li>
+                        </ul>
+                        <div class="spacer"></div>
+                        <div class="btn-row">
+                            <a class="btn" href="/tracker">Get Tracker →</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">📈</span>
+                            <h3>stock-alerts</h3>
+                        </div>
+                        <span class="pill pill-direct">Open source</span>
+                        <p>
+                            A screening toolkit that reads the levels a chart reader would
+                            mark by hand — consolidation shelves, pivot lows, unfilled gaps,
+                            projected moving averages — straight from raw OHLCV.
+                        </p>
+                        <ul class="checks">
+                            <li>~700 tickers, sector-rotation and market-regime reports</li>
+                            <li>Confluence scoring — levels several methods agree on rank higher</li>
+                            <li>Auto-built four-rung entry ladders, spaced to each stock's volatility</li>
+                            <li>Runs on free yfinance data; Alpaca optional</li>
+                        </ul>
+                        <div class="spacer"></div>
+                        <div class="btn-row">
+                            <a class="btn" href="/stock-alerts">Download &amp; run →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">On the web</h2>
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🌐</span>
+                            <h3>The Yo Web</h3>
+                        </div>
+                        <span class="pill pill-live">Live</span>
+                        <p>
+                            The web companion to The Yo, running on the same Firestore
+                            database as the phone app — so an event created on your laptop
+                            is on your phone before you close the tab.
+                        </p>
+                        <ul class="checks">
+                            <li>Next.js 15 App Router, TypeScript, Tailwind v4</li>
+                            <li>Server-rendered pages with interactive client islands</li>
+                            <li>Admin tooling behind <code>firebase-admin</code> API routes</li>
+                        </ul>
+                        <div class="spacer"></div>
+                        <div class="btn-row">
+                            <a class="btn" href="https://theyo.org">Open the dashboard →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">The archive</h2>
+                <p class="section-lead">
+                    Where the house style came from. Kept for reference, not for install.
+                </p>
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🧱</span>
+                            <h3>Snapples components</h3>
+                        </div>
+                        <span class="pill pill-archive">2018 · Archive</span>
+                        <p>
+                            Around 9,000 lines of React Native components written by hand
+                            before any of the modern tooling existed — camera, cards, map,
+                            menus, game UI. Every app I ship today still traces its design
+                            system back to this folder.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">⏰</span>
+                            <h3>Snapples cloud functions</h3>
+                        </div>
+                        <span class="pill pill-archive">2019 · Archive</span>
+                        <p>
+                            Firebase Cloud Functions plus an App Engine cron service running
+                            the original game's hourly loop — topic rotation, pre-submission
+                            handling and quick-play matchmaking.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/resume">Résumé</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Big Vibe Studios. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,46 +1,230 @@
 {
-  "hosting": {
-    "target": "bvs-web",
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "!**/.well-known/**",
-      "**/node_modules/**"
-    ],
-    "headers": [
-      {
-        "source": "/.well-known/apple-app-site-association",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ]
-      }
-    ],
-    "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "/theyo",
-        "destination": "/theyo.html"
-      },
-      {
-        "source": "/theyo/join",
-        "destination": "/theyo.html"
-      },
-      {
-        "source": "/theyo/invite/**",
-        "destination": "/theyo/invite/index.html"
-      },
-      {
-        "source": "/theyo/u/**",
-        "destination": "/theyo/u/index.html"
-      },
-      {
-        "source": "/theyo/promo/**",
-        "destination": "/theyo/promo/index.html"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "bvs-web",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "!**/.well-known/**",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "/.well-known/apple-app-site-association",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        {
+          "source": "**/*.apk",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.android.package-archive"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "**/*.zip",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/zip"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "/assets/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "rewrites": [
+        {
+          "source": "/contact",
+          "destination": "/contact.html"
+        },
+        {
+          "source": "/builds",
+          "destination": "/builds.html"
+        },
+        {
+          "source": "/resume",
+          "destination": "/resume.html"
+        },
+        {
+          "source": "/tracker",
+          "destination": "/tracker.html"
+        },
+        {
+          "source": "/stock-alerts",
+          "destination": "/stock-alerts.html"
+        },
+        {
+          "source": "/snappled",
+          "destination": "/snappled.html"
+        },
+        {
+          "source": "/theyo",
+          "destination": "/theyo.html"
+        },
+        {
+          "source": "/theyo/join",
+          "destination": "/theyo.html"
+        },
+        {
+          "source": "/theyo/invite/**",
+          "destination": "/theyo/invite/index.html"
+        },
+        {
+          "source": "/snappled/s/**",
+          "function": "snappleShare"
+        },
+        {
+          "source": "/theyo/u/**",
+          "destination": "/theyo/u/index.html"
+        },
+        {
+          "source": "/theyo/promo/**",
+          "destination": "/theyo/promo/index.html"
+        }
+      ]
+    },
+    {
+      "target": "bvs-main",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "!**/.well-known/**",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "/.well-known/apple-app-site-association",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        {
+          "source": "**/*.apk",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/vnd.android.package-archive"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "**/*.zip",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/zip"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "/assets/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "rewrites": [
+        {
+          "source": "/contact",
+          "destination": "/contact.html"
+        },
+        {
+          "source": "/builds",
+          "destination": "/builds.html"
+        },
+        {
+          "source": "/resume",
+          "destination": "/resume.html"
+        },
+        {
+          "source": "/tracker",
+          "destination": "/tracker.html"
+        },
+        {
+          "source": "/stock-alerts",
+          "destination": "/stock-alerts.html"
+        },
+        {
+          "source": "/snappled",
+          "destination": "/snappled.html"
+        },
+        {
+          "source": "/theyo",
+          "destination": "/theyo.html"
+        },
+        {
+          "source": "/theyo/join",
+          "destination": "/theyo.html"
+        },
+        {
+          "source": "/theyo/invite/**",
+          "destination": "/theyo/invite/index.html"
+        },
+        {
+          "source": "/snappled/s/**",
+          "function": "snappleShare"
+        },
+        {
+          "source": "/theyo/u/**",
+          "destination": "/theyo/u/index.html"
+        },
+        {
+          "source": "/theyo/promo/**",
+          "destination": "/theyo/promo/index.html"
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "*.local"
+      ]
+    }
+  ]
 }

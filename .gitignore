@@ -13,3 +13,14 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Env / signing
+.env
+.env.*
+!.env.example
+credentials.json
+credentials/
+
+# dependencies
+node_modules/
+functions/node_modules/

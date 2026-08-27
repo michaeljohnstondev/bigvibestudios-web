@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Johnston — Résumé | Big Vibe Studios</title>
+    <meta name="description" content="Michael Johnston — mobile and full-stack developer. React Native, Firebase, Next.js, Python. Two apps live on the App Store and Google Play.">
+    <link rel="stylesheet" href="/assets/site.css">
+    <style>
+        .resume h2 {
+            font-size: 1.1em;
+            font-weight: 900;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            margin: 0 0 24px;
+        }
+
+        .resume .meta {
+            color: var(--dim);
+            font-size: 0.85em;
+            margin-bottom: 12px;
+        }
+
+        .resume .entry {
+            padding-bottom: 26px;
+            margin-bottom: 26px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+        }
+
+        .resume .entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .resume .entry h3 {
+            font-size: 1.35em;
+            color: var(--green);
+            margin-bottom: 2px;
+        }
+
+        .resume ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .resume ul li {
+            position: relative;
+            padding-left: 18px;
+            color: var(--muted);
+            max-width: 70ch;
+        }
+
+        .resume ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+        }
+
+        .skill-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 16px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .skill-row dt {
+            color: var(--cyan);
+            font-weight: 700;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-row dd {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        @media (max-width: 620px) {
+            .skill-row {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+
+            header.site nav,
+            footer.site,
+            .no-print {
+                display: none;
+            }
+
+            .logo,
+            .resume h2,
+            .resume .entry h3,
+            .skill-row dt {
+                -webkit-text-fill-color: #111;
+                color: #111;
+            }
+
+            .resume ul li,
+            .skill-row dd,
+            p.lead,
+            .meta {
+                color: #333;
+            }
+
+            .resume .entry {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site">
+        <div class="container">
+            <a href="/" class="logo">BIG VIBE STUDIOS</a>
+            <nav class="site">
+                <a href="/">Home</a>
+                <a href="/builds">Builds</a>
+                <a href="/resume" aria-current="page">Résumé</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container resume">
+
+            <section class="hero">
+                <h1>Michael Johnston</h1>
+                <p class="lead">
+                    <strong style="color: var(--green);">Mobile &amp; full-stack developer.</strong>
+                    I build and ship apps on my own: app, backend, web, store listing.
+                    Two live on the App Store and Google Play, a third in closed beta.
+                </p>
+                <div class="btn-row no-print" style="margin-top: 22px;">
+                    <a class="btn" href="/contact">Get in touch</a>
+                    <button class="btn btn-ghost" onclick="window.print()">Print / save as PDF</button>
+                </div>
+            </section>
+
+            <section>
+                <h2>Stack</h2>
+                <dl>
+                    <div class="skill-row">
+                        <dt>Mobile</dt>
+                        <dd>React Native 0.83, Expo 55, EAS Build and Update, Reanimated,
+                            vision-camera, Apple and Google Sign-In</dd>
+                    </div>
+                    <div class="skill-row">
+                        <dt>Backend</dt>
+                        <dd>Firebase Auth, Firestore with security rules and composite
+                            indexes, Cloud Functions, Storage, FCM</dd>
+                    </div>
+                    <div class="skill-row">
+                        <dt>Web</dt>
+                        <dd>Next.js 15, TypeScript, React 19, Tailwind v4, Vercel,
+                            Firebase Hosting</dd>
+                    </div>
+                    <div class="skill-row">
+                        <dt>Python</dt>
+                        <dd>pandas, NumPy, yfinance, Alpaca</dd>
+                    </div>
+                    <div class="skill-row">
+                        <dt>Shipping</dt>
+                        <dd>App Store and Play review, Data Safety, TestFlight,
+                            universal links and App Links, Git</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Work</h2>
+
+                <div class="entry">
+                    <h3>The Yo</h3>
+                    <p class="meta">
+                        App Store &amp; Google Play · Community event app ·
+                        React Native, Firebase · 255 commits · 86k lines
+                    </p>
+                    <ul>
+                        <li>Events end to end: create, edit, cancel, templates, recurrence, guest lists, co-hosts, private events.</li>
+                        <li><strong>19 Cloud Functions, 6.2k lines</strong>, behind every notification: invites, RSVPs, comments, follows, scheduled reminders, cleanup.</li>
+                        <li>QR invite deep links on verified universal links and App Links.</li>
+                        <li>Follow graph, host profiles, interest matching, per-event message boards.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>Snappled</h3>
+                    <p class="meta">
+                        TestFlight &amp; Play beta · Video party game ·
+                        React Native, Firebase · 222 commits · 35k lines
+                    </p>
+                    <ul>
+                        <li>Answer a prompt in ten seconds of video. The crowd votes, the votes decide the round.</li>
+                        <li>In-app capture with <code>vision-camera</code>, client-side compression, <code>expo-video</code> feed.</li>
+                        <li>Round engine in four explicit phases: prompt, record, vote, results.</li>
+                        <li>Saved clips persist. Everything else is deleted when its prompt expires.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>The Yo Web</h3>
+                    <p class="meta">
+                        Live · Companion dashboard ·
+                        Next.js 15, TypeScript, Tailwind v4 · 11.5k lines
+                    </p>
+                    <ul>
+                        <li>Same Firestore as the mobile app, so there is no second API tier to keep in sync.</li>
+                        <li>App Router route groups, client islands for interactive views, <code>firebase-admin</code> routes for privileged work.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>Tracker</h3>
+                    <p class="meta">
+                        Direct download · Personal tracker ·
+                        React Native, Firebase · 56 commits in 3 days · 6.9k lines
+                    </p>
+                    <ul>
+                        <li><strong>Everything is a node.</strong> Children, a goal, a tick, a count are optional fields rather than types, so one node can be a folder, a timer and a repeating task at once.</li>
+                        <li>Local-first. Timers store an absolute start time, so elapsed time is recomputed and survives a reboot.</li>
+                        <li>Firestore sync for shared lists: email invites, membership records, collection-group recovery.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>stock-alerts</h3>
+                    <p class="meta">
+                        Source · Screening toolkit ·
+                        Python, pandas, NumPy, yfinance / Alpaca · 15.2k lines
+                    </p>
+                    <ul>
+                        <li>Screens ~700 tickers: indicators, signals, adaptive thresholds, scoring, sector rotation, retrospective grading of earlier picks.</li>
+                        <li><code>suggest_levels</code> reads buy levels off raw OHLCV, from consolidation shelves, pivot lows, unfilled gaps and projected rising MAs, ranked by confluence.</li>
+                        <li><code>fill_levels</code> builds four-rung entry ladders spaced to each stock's own volatility, never overwriting hand-set levels.</li>
+                        <li><code>rate_stocks</code>, the interactive pass: resumable, with muting, snoozing and staleness-driven re-rating.</li>
+                    </ul>
+                </div>
+
+                <div class="entry">
+                    <h3>bigvibestudios.com</h3>
+                    <p class="meta">Live · Studio site and build catalog · Firebase Hosting</p>
+                    <ul>
+                        <li>Landing pages, direct downloads for the builds that are not on a store, beta-access forms.</li>
+                        <li>Serves the <code>.well-known</code> deep-link files and the legal pages both stores require.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/builds">Builds</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Big Vibe Studios. All rights reserved.</p>
+    </footer>
+</body>
+</html>

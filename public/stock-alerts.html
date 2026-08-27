@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stock-alerts | Big Vibe Studios</title>
+    <meta name="description" content="stock-alerts — a Python toolkit that reads chart structure off raw price data and builds entry ladders across ~700 tickers. Free download.">
+    <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+    <header class="site">
+        <div class="container">
+            <a href="/" class="logo">BIG VIBE STUDIOS</a>
+            <nav class="site">
+                <a href="/">Home</a>
+                <a href="/builds">Builds</a>
+                <a href="/resume">Résumé</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section class="hero">
+                <span class="pill pill-direct">Python · Free download</span>
+                <h1>stock-alerts</h1>
+                <p class="lead">
+                    A screening toolkit that finds the levels a chart reader would mark by
+                    hand — and then does it for seven hundred tickers while you sleep.
+                </p>
+                <p class="lead">
+                    It doesn't predict anything and it doesn't tell you what to buy. It
+                    reads structure out of raw price data — the shelves price kept coming
+                    back to, the swing lows that held, the gaps nobody filled, where a
+                    rising 200-day average will be in three months — and hands you ranked
+                    candidates. You decide.
+                </p>
+
+                <div class="btn-row" style="margin-top: 26px;">
+                    <a class="btn" id="zipBtn" href="/downloads/stock-alerts.zip"
+                       download>Download the source</a>
+                    <a class="btn btn-ghost" href="#run">How to run it</a>
+                </div>
+                <span class="btn-note" id="zipNote">
+                    Python 3.10+ · Runs on free data · No account needed
+                </span>
+            </section>
+
+            <section>
+                <h2 class="section-title">The three tools</h2>
+                <p class="section-lead">
+                    A package of analysis code, plus command-line tools that each do one
+                    job well.
+                </p>
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">📐</span>
+                            <h3>suggest_levels</h3>
+                        </div>
+                        <p>
+                            Point it at a ticker and it hunts four kinds of structure:
+                            consolidation shelves found by time spent at price, confirmed
+                            pivot lows, unfilled gaps, and projections of where a
+                            <em>rising</em> 50- or 200-day average lands one to six months out.
+                        </p>
+                        <p>
+                            Levels that several methods agree on score as confluence and
+                            rank to the top. Nothing is invented — every number traces back
+                            to something on the chart.
+                        </p>
+                        <pre>python suggest_levels.py HPE
+python suggest_levels.py HPE ORCL CRM
+python suggest_levels.py HPE --all</pre>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">🪜</span>
+                            <h3>fill_levels</h3>
+                        </div>
+                        <p>
+                            Bulk-builds four-rung entry ladders for every ticker you haven't
+                            rated yet. Rungs are spaced to that stock's own volatility, so a
+                            quiet utility and a biotech don't get the same 5% steps.
+                        </p>
+                        <p>
+                            It never touches a ticker you've already rated, and everything
+                            it writes is tagged <code>auto</code> so your hand-set levels stay
+                            yours.
+                        </p>
+                        <pre>python fill_levels.py --dry AAPL MSFT
+python fill_levels.py --limit 50
+python fill_levels.py</pre>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <span class="card-icon">⭐</span>
+                            <h3>rate_stocks</h3>
+                        </div>
+                        <p>
+                            The interactive pass. Walk your list, set your own price points,
+                            quit whenever — progress saves after every stock, so you pick up
+                            exactly where you stopped.
+                        </p>
+                        <p>
+                            Mute a rung you've decided against, snooze a ticker for a
+                            fortnight to let a move settle, or re-rate only what's gone
+                            stale.
+                        </p>
+                        <pre>python rate_stocks.py buy
+python rate_stocks.py --refresh 30
+python rate_stocks.py --mute AVGO 2
+python rate_stocks.py --show AAPL</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">And the reports</h2>
+                <p class="section-lead">
+                    Run the scanner and it writes plain-text reports you can actually read
+                    — no dashboard, no login, just a file.
+                </p>
+
+                <div class="panel">
+<pre>================================================================
+  SECTOR ROTATION REPORT
+================================================================
+
+  Market:  SPY = BULLISH, QQQ = BULLISH
+
+  SECTOR RANKINGS (vs SPY — 1d / 10d / 30d / composite)
+----------------------------------------------------------------
+
+    #1   Energy                -0.3%   +9.3%  +13.7%  comp:+10.1  LEADING
+    #2   Healthcare            +3.3%   +6.8%   +6.0%  comp: +7.1  LEADING
+    #3   Financial Services    -0.7%   -0.5%   +1.3%  comp: +1.2  LEADING
+    #4   Consumer Defensive    +0.9%   +1.6%   +1.7%  comp: +1.1
+    #5   Basic Materials       +1.1%   +0.5%   -0.5%  comp: -0.0</pre>
+                    <p style="color: var(--muted);">
+                        Alongside it: per-ticker ratings runs, market-regime detection,
+                        and retrospective scoring that goes back and grades how earlier
+                        picks actually played out.
+                    </p>
+                </div>
+            </section>
+
+            <section id="run">
+                <h2 class="section-title">Running it</h2>
+
+                <div class="panel">
+                    <h3>1. Install</h3>
+<pre>unzip stock-alerts.zip
+cd stock-alerts
+pip install -r requirements.txt</pre>
+
+                    <h3>2. Pick your tickers</h3>
+                    <p style="color: var(--muted); margin-bottom: 14px;">
+                        Open <code>config.json</code> and put whatever you follow in the
+                        <code>tickers</code> list. It ships with around 700 US names grouped
+                        by sector — trim it to taste.
+                    </p>
+
+                    <h3>3. Run</h3>
+<pre>python -m stock_checker              # full scan and ratings report
+python suggest_levels.py NVDA        # levels for one ticker
+python fill_levels.py --dry          # preview auto-built ladders</pre>
+
+                    <div class="note">
+                        Data comes from Yahoo Finance through <code>yfinance</code>, which is
+                        free and needs no key. If you have an Alpaca account you can add
+                        your keys to a <code>.env</code> file for live quotes — everything
+                        works without it.
+                    </div>
+
+                    <p style="color: var(--muted);">
+                        Requires Python 3.10 or newer. Dependencies:
+                        <code>yfinance</code>, <code>pandas</code>, <code>lxml</code>.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div class="panel">
+                    <h2 class="section-title">One thing to be clear about</h2>
+                    <p style="color: var(--muted);">
+                        This is a tool I built for my own use and it is not financial
+                        advice. It surfaces structure in historical price data. It has no
+                        opinion on whether you should buy anything, and neither do I.
+                        Markets can and do go down.
+                    </p>
+                </div>
+            </section>
+
+            <section id="ask">
+                <h2 class="section-title">Questions, or want a walkthrough?</h2>
+                <p class="section-lead">
+                    Happy to explain any part of how it works, or send the latest build
+                    directly.
+                </p>
+
+                <div class="panel">
+                    <form class="request" id="askForm" action="https://formspree.io/f/xvznvlzz" method="POST">
+                        <input type="hidden" name="_subject" value="stock-alerts enquiry">
+                        <input type="hidden" name="app" value="stock-alerts">
+                        <div>
+                            <label for="askEmail">Your email</label>
+                            <input type="email" id="askEmail" name="email" required
+                                   placeholder="you@example.com">
+                        </div>
+                        <div>
+                            <label for="askMsg">What would you like to know?</label>
+                            <textarea id="askMsg" name="message" rows="4"
+                                      placeholder="Optional"></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="askSubmit">Send</button>
+                        <div class="form-msg ok" id="askOk">Sent — I'll get back to you.</div>
+                        <div class="form-msg err" id="askErr">
+                            That didn't send — try the <a class="inline" href="/contact">contact form</a> instead.
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/builds">Builds</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Big Vibe Studios. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Same rule as the Tracker page: never hand out a link that 404s.
+        (function checkZip() {
+            const btn = document.getElementById('zipBtn');
+            const note = document.getElementById('zipNote');
+            fetch(btn.getAttribute('href'), { method: 'HEAD' })
+                .then(function (res) {
+                    if (res.ok) return;
+                    throw new Error('missing');
+                })
+                .catch(function () {
+                    btn.setAttribute('href', '#ask');
+                    btn.removeAttribute('download');
+                    btn.textContent = 'Request the source';
+                    note.textContent = 'Packaging the next release — ask and I\'ll send it over.';
+                });
+        })();
+
+        (function wireForm() {
+            const form = document.getElementById('askForm');
+            const submit = document.getElementById('askSubmit');
+            const ok = document.getElementById('askOk');
+            const err = document.getElementById('askErr');
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                ok.style.display = 'none';
+                err.style.display = 'none';
+                submit.disabled = true;
+                submit.textContent = 'Sending...';
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { Accept: 'application/json' },
+                    });
+                    if (!res.ok) throw new Error('failed');
+                    form.reset();
+                    ok.style.display = 'block';
+                } catch (_) {
+                    err.style.display = 'block';
+                } finally {
+                    submit.disabled = false;
+                    submit.textContent = 'Send';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

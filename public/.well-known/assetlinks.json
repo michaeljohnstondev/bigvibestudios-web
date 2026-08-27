@@ -1,11 +1,26 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.bigvibestudios.bvs",
       "sha256_cert_fingerprints": [
-        "4F:EA:2E:23:D8:E5:75:4D:56:4E:91:13:2D:AC:9D:39:6A:38:06:AA:60:F8:7E:FD:87:68:42:90:20:86:8B:18"
+        "4F:EA:2E:23:D8:E5:75:4D:56:4E:91:13:2D:AC:9D:39:6A:38:06:AA:60:F8:7E:FD:87:68:42:90:20:86:8B:18",
+        "F3:3B:75:35:80:93:25:8E:71:5E:48:00:3D:3A:30:22:F8:89:BE:46:18:E7:8E:AF:FD:17:2E:8B:87:76:2C:9D"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bigvibestudios.snappled",
+      "sha256_cert_fingerprints": [
+        "BB:25:55:4B:E0:E4:6A:3C:9B:06:51:EC:3E:60:37:F0:FB:0D:59:A7:88:18:36:AE:2C:84:67:80:E6:7E:D5:76"
       ]
     }
   }

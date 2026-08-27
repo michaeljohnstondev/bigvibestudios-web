@@ -12,6 +12,12 @@
           "/join?*",
           "/promo/*"
         ]
+      },
+      {
+        "appID": "MK38TQM834.com.bigvibestudios.snappled",
+        "paths": [
+          "/snappled/s/*"
+        ]
       }
     ]
   }
