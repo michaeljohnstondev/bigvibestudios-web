@@ -59,9 +59,10 @@ function tag(property, content) {
  * effort on top of that — Facebook and Discord honour it, most others
  * ignore it.
  */
-function buildOg(card, pageUrl) {
-  const title = card && card.prompt
-    ? '"' + card.prompt + '"'
+function buildOg(card, pageUrl, promptOverride) {
+  const prompt = promptOverride || (card && card.prompt) || '';
+  const title = prompt
+    ? '"' + prompt + '"'
     : 'A snapple on Snappled';
   const creator = card && card.creatorUsername
     ? 'by @' + card.creatorUsername + ' — ' + DESCRIPTION
@@ -113,7 +114,22 @@ function idFromPath(reqPath) {
 
 exports.snappleShare = functions.https.onRequest(async (req, res) => {
   const id = idFromPath(req.path) || (req.query && req.query.id) || null;
-  const pageUrl = SITE + '/snappled/s/' + (id || '');
+
+  // Build the canonical from the REQUEST, not a constant. This function
+  // now serves two hosts — snappled.com/s/<id> and the original
+  // bigvibestudios.com/snappled/s/<id> — and hardcoding one meant the
+  // other advertised a canonical pointing somewhere else.
+  const host = (req.get && req.get('host')) || 'bigvibestudios.com';
+  const pageUrl = 'https://' + host + (req.path || ('/s/' + (id || '')));
+
+  // Optional prompt override, ?p=... — a snapple gets REPLAYED against
+  // other prompts, and a share from a game round is answering that
+  // round's prompt, not the one the clip was recorded for. Passing it in
+  // the URL means the same clip can unfurl with the right context on
+  // every share, with no re-render.
+  const promptOverride = req.query && typeof req.query.p === 'string'
+    ? req.query.p.slice(0, 200)
+    : '';
 
   let card = null;
   let failure = null;
@@ -161,12 +177,11 @@ exports.snappleShare = functions.https.onRequest(async (req, res) => {
       JSON.stringify(failure).split('<').join('\\u003c') + ';</script>';
   }
 
-  const title = card && card.prompt
-    ? card.prompt + ' — Snappled'
-    : 'Snapple — Snappled';
+  const pageTitle = promptOverride || (card && card.prompt) || '';
+  const title = pageTitle ? pageTitle + ' — Snappled' : 'Snapple — Snappled';
 
   const html = TEMPLATE
-    .split('__OG__').join(buildOg(card, pageUrl))
+    .split('__OG__').join(buildOg(card, pageUrl, promptOverride))
     .split('__DATA__').join(data)
     .split('__TITLE__').join(attr(title));
 
