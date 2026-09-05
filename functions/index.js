@@ -119,7 +119,16 @@ exports.snappleShare = functions.https.onRequest(async (req, res) => {
   // now serves two hosts — snappled.com/s/<id> and the original
   // bigvibestudios.com/snappled/s/<id> — and hardcoding one meant the
   // other advertised a canonical pointing somewhere else.
-  const host = (req.get && req.get('host')) || 'bigvibestudios.com';
+  // Behind a Hosting rewrite, req.host is the *function's* host
+  // (us-central1-….cloudfunctions.net). Hosting forwards the real one in
+  // x-forwarded-host, so prefer that and only fall back to req.host for
+  // direct invocations. Getting this wrong put the raw function URL in
+  // og:url, which is worse than the hardcoded constant it replaced.
+  const fwd = req.get && req.get('x-forwarded-host');
+  const rawHost = fwd || (req.get && req.get('host')) || '';
+  const host = /cloudfunctions\.net|run\.app/.test(rawHost) || !rawHost
+    ? 'bigvibestudios.com'
+    : rawHost;
   const pageUrl = 'https://' + host + (req.path || ('/s/' + (id || '')));
 
   // Optional prompt override, ?p=... — a snapple gets REPLAYED against

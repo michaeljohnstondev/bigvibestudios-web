@@ -24,3 +24,10 @@ credentials/
 # dependencies
 node_modules/
 functions/node_modules/
+
+# Downloadable builds — served from Hosting, never committed.
+# An APK is ~78MB; GitHub warns over 50MB and rejects over 100MB, and a
+# binary that changes every release would bloat history permanently.
+# The .gitkeep keeps the directory; the file is uploaded at deploy time.
+public/downloads/*.apk
+public/downloads/*.aab

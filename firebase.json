@@ -98,10 +98,6 @@
           "function": "snappleShare"
         },
         {
-          "source": "/s/**",
-          "function": "snappleShare"
-        },
-        {
           "source": "/theyo/u/**",
           "destination": "/theyo/u/index.html"
         },
@@ -206,10 +202,6 @@
         },
         {
           "source": "/snappled/s/**",
-          "function": "snappleShare"
-        },
-        {
-          "source": "/s/**",
           "function": "snappleShare"
         },
         {
