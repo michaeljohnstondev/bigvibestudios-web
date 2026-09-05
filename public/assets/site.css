@@ -104,6 +104,22 @@ h2.section-title {
     margin-bottom: 8px;
 }
 
+/* Group heading inside a section — Mobile / Web / Data. Smaller and
+   quieter than .section-title so the section still reads as one thing
+   rather than three competing ones. */
+h3.group-title {
+    font-size: 1.05em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 34px 0 14px;
+}
+
+h3.group-title:first-of-type {
+    margin-top: 18px;
+}
+
 .section-lead {
     color: var(--muted);
     margin-bottom: 28px;
