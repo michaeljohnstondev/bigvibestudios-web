@@ -31,3 +31,7 @@ functions/node_modules/
 # The .gitkeep keeps the directory; the file is uploaded at deploy time.
 public/downloads/*.apk
 public/downloads/*.aab
+
+# Private résumé shelf — served from Hosting, never committed.
+# These carry a home address and phone number; this repo is going public.
+public/resumes/
